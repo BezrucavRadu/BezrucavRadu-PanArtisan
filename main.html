@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home PanArtisan</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="main-search">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button id="searchbtn"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="main-user">
+                <button id="userbtn">Contul meu
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div id="dropdownuser-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div id="myTopnav">
+                <a href="#home" class="active">Home</a>
+                <a href="#news">Noutati</a>
+                <a href="#contact">Contact</a>
+                <a href="products.html">Produse</a>
+                <a href="#about">Despre noi</a>
+            </div>
+        </div>
+        <div class="presentation">
+            <div class="text1" style="text-align:left">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                      <img src="Covrigi1.jpg" style="width:20%; float: right; margin: 10px 0px 10px 20px">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="Paine11.jpg" style="width:20%; float: right; margin: 10px 0px 10px 20px">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="Paine31.jpg" style="width:20%; float: right; margin: 10px 0px 10px 20px">
+                    </div>
+
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                </div>
+                <p>
+                    Pentru cei care nu știu cu ce ne ocupăm la Pan Artisan, vă spunem noi:
+                    <ul>
+					<li>Pâine Pan Artisan: amestec de făină de la Moara cu pietre și făină de grâu dur;</li>
+                    <li>Pâine Măciniș cu semințe de in: amestec de făină albă și făină de grâu necernută şi utilizată cu
+                    tot cu tărâţe și semințe de in</li>
+                    <li>Pâine Pan Artisan: amestec de făină de la Moara cu pietre și făină de grâu dur;</li>
+                    <li>Pâine Măciniș cu semințe de in: amestec de făină albă și făină de grâu necernută şi utilizată cu
+                    tot cu tărâţe și semințe de in</li>
+                    <li>Pâine Pan Artisan: amestec de făină de la Moara cu pietre și făină de grâu dur;</li>
+                    <li>Pâine Măciniș cu semințe de in: amestec de făină albă și făină de grâu necernută şi utilizată cu
+                    tot cu tărâţe și semințe de in</li>
+					</ul>
+                    și livrăm de la prima oră
+				</p>
+
+            </div>
+        </div>
+                <div class="footer">
+                    <div class="footer-left">
+                        <h3>Pan<span>Artisan</span></h3>
+                        <div class="footer-links">
+                            <a href="#" class="link1">Home</a>
+                            <a href="#" class="link1">Blog</a>
+                            <a href="#" class="link1">About</a>
+                            <a href="#" class="link1">Transport</a>
+                            <a href="#" class="link1">Contact</a>
+                        </div>
+                        <div class="footer-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-center">
+                        <div>
+                            <i class="fa fa-map-signs"></i>
+                            <p><span>Str.Pacurari</span> Iasi, Iasi</p>
+                        </div>
+                        <div>
+                            <i class="fa fa-phone"></i>
+                            <p>0742.125.367</p>
+                        </div>
+                        <div>
+                            <i class="fa fa-envelope"></i>
+                            <p><a href="mailto:panartisan@yahoo.com">PanArtisanMail</a></p>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <p class="footer-company-about">
+                            <span>Despre noi</span>
+                            PanArtisan este un proiect ce a prins viață dintr-o mare pasiune pentru amintirile de odinioară, de bunici și de uliță. Sufletul lui este pâinea artizanală pregătită după metoda străveche a dospirii îndelungi cu maia naturală.
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </div>
+<!--
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.slider_foto_left').slick({
+          fade: false,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          pauseOnFocus: false,
+          pauseOnHover: false,
+          autoplay: true,
+          autoplaySpeed: 2000
+        });
+      });
+    </script>
+-->
+    <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        </script>
+</body>
+
+</html>

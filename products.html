@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produse PanArtizan</title>
+    <link rel="stylesheet" type="text/css" href="products.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h2 class="title">Produse</h2>
+            <form class="search" action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button id="searchbtn"><i class="fa fa-search"></i></button>
+            </form>
+            <h4 class="logo">PanArtizan</h4>
+
+        </header>
+        <div class="filter">
+            <ul>
+                <li class="active">
+                    <input type="checkbox" data-id="ofertaZilei" name="Oferta" />
+                    <label for="ofertaZilei"><span style="color:white">%</span> Oferta Zilei <span
+                            style="color:white">%</span></label>
+                </li>
+                <li>
+                    <input type="checkbox" id="Paine" name="Paine" />
+                    <label for="Paine">Paine</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="Covrigi" name="Covrigi" />
+                    <label for="Covrigi">Covrigi</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="Placinta"  name="Placinta" />
+                    <label for="Placinta">Placinta</label>
+                </li>
+            </ul>
+        </div>
+        <section>
+            <div class="thumb" id="Paine">
+                <img src="Img/Paineneagra.jpg" alt="Paine neagara">
+                <h4>Paine</h4>
+            </div>
+            <div class="thumb" id="Paine">
+                <img src="Img/Paineneagra.jpg" alt="Paine neagara">
+                <h4>Paine</h4>
+            </div>
+            <div class="thumb" id="Paine">
+                <img src="Img/Paineneagra.jpg" alt="Paine neagara">
+                <h4>Paine</h4>
+            </div>
+            <div class="thumb" id="Covrigi">
+                <img src="Img/Covrigi.jpg" alt="Covrigi">
+                <h4>Covrigi</h4>
+            </div>
+            <div class="thumb" id="Covrigi">
+                <img src="Img/Covrigi.jpg" alt="Covrigi">
+                <h4>Covrigi</h4>
+            </div>
+            <div class="thumb" id="Covrigi">
+                <img src="Img/Covrigi.jpg" alt="Covrigi">
+                <h4>Covrigi</h4>
+            </div>
+            <div class="thumb" id="Placinta">
+                <img src="Img/Placinta.jpg" alt="Placinte">
+                <h4>Placinte</h4>
+            </div>
+            <div class="thumb" id="Placinta">
+                <img src="Img/Placinta.jpg" alt="Placinte">
+                <h4>Placinte</h4>
+            </div>
+            <div class="thumb" id="Placinta">
+                <img src="Img/Placinta.jpg" alt="Placinte">
+                <h4>Placinte</h4>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer">
+                <div class="footer-left">
+                    <h3>Pan<span>Artizan</span></h3>
+                    <div class="footer-links">
+                        <a href="#" class="link1">Home</a>
+                        <a href="#" class="link1">Blog</a>
+                        <a href="#" class="link1">About</a>
+                        <a href="#" class="link1">Transport</a>
+                        <a href="#" class="link1">Contact</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-center">
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p><span>Str.Pacurari</span> Iasi, Iasi</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <p>0742.125.367</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p><a href="mailto:panartisan@yahoo.com">PanArtisanMail</a></p>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-company-about">
+                        <span>About The Company</span>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint voluptate earum voluptatum,
+                        assumenda dolores maxime aut aliquid fugiat ducimus quae tenetur deserunt natus. Est, illo ex
+                        impedit sunt omnis libero.
+                    </p>
+                </div>
+            </div>
+           
+
+        </footer>
+    </div>
+    <script>
+        const checkbox = document.querySelectorAll('input');
+        const section = document.querySelectorAll('.thumb');
+        var values = [];
+        checkbox.forEach(item => {
+            item.addEventListener('change', e => {
+                if (e.target.checked) {
+                    item.checked = true;
+                    var text = item.getAttribute("name");
+                    values.push(text);
+                    console.log(values);
+                    section.forEach(show => {
+                        show.style.display = "none";
+                        for (var i = 0; i < values.length; i++) {
+                            if (show.getAttribute("id") === values[i]) {
+                                show.style.display = "block";
+                            }
+                        }
+                    });
+                } else {
+                    section.forEach(show => {
+                        var text = item.getAttribute("name");
+                        values = values.filter(function (item) {
+                            return item !== text;
+                        })
+                        if (values.length === 0) {
+                            show.style.display = "block";
+                            return;
+                        }
+                        show.style.display = "none";
+                        for (var i = 0; i < values.length; i++) {
+                            if (show.getAttribute("id") === values[i]) {
+                                show.style.display = "block";
+                            }
+                        }
+                    });
+                    console.log(values)
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>
